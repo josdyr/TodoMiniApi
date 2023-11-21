@@ -1,0 +1,14 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+  description: API Description
+servers:
+  - url: https://api.server.test/v1
+  - url: https://api.server.prod/v1
+paths:
+  /test:
+    get:
+      responses:
+        "200":
+          description: OK
