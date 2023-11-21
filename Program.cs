@@ -41,26 +41,19 @@ static async Task<IResult> CreateTodo(TodoItemDTO todoItemDTO, TodoDb db)
         IsComplete = todoItemDTO.IsComplete,
         Name = todoItemDTO.Name
     };
-    
     db.Todos.Add(todoItem);
     await db.SaveChangesAsync();
-
     todoItemDTO = new TodoItemDTO(todoItem);
-
     return TypedResults.Created($"/todoitems/{todoItem.Id}", todoItemDTO);
 }
 
 static async Task<IResult> UpdateTodo(int id, TodoItemDTO todoItemDTO, TodoDb db)
 {
     var todo = await db.Todos.FindAsync(id);
-    
     if (todo is null) return TypedResults.NotFound();
-    
     todo.Name = todoItemDTO.Name;
     todo.IsComplete = todoItemDTO.IsComplete;
-
     await db.SaveChangesAsync();
-
     return TypedResults.NoContent();
 }
 
@@ -72,6 +65,5 @@ static async Task<IResult> DeleteTodo(int id, TodoDb db)
         await db.SaveChangesAsync();
         return TypedResults.NoContent();
     }
-
     return TypedResults.NotFound();
 }
