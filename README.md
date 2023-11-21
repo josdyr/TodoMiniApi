@@ -16,6 +16,8 @@
 * unit tests on endpoints
 * dto
 * clean architecture
+* templating engine
+* pwa
 
 plan:
 - [x] minimal api
