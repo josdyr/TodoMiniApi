@@ -1,3 +1,4 @@
+notes:
 * data model
 * dotnet backend
 * controller based api
@@ -22,4 +23,11 @@
 plan:
 - [x] minimal api
 - [x] swagger
+- [x] database
 - [ ] react frontend
+
+log:
+- [x] create dotnet minimal api
+- [x] implement swagger
+- [x] create sql server and database
+- [x] connect database to backend using connection string and test that it stores data
